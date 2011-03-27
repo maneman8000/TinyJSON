@@ -87,7 +87,7 @@
     NSRange r = [inputString rangeOfCharacterFromSet:notSpaceSet options:0 range:searchRange];
     if (r.location >= [inputString length]) return nil;
     UPDATE_SEARCH_RANGE(searchRange, r);
-    NSLog(@"{%lu, %lu}", searchRange.location, searchRange.length);
+//    NSLog(@"{%lu, %lu}", searchRange.location, searchRange.length);
     switch ([inputString characterAtIndex:r.location]) {
         // symbols
         case 0x0022:
@@ -166,23 +166,5 @@
     tokenStream = [[TokenStream alloc] initWithString:input];
     return [self object];
 }
-
-/*
-Token *tk = [tokenStream getToken];
-if (!tk) { NSLog(@"END1"); return; }
-NSLog(@"%c", tk->kind);
-
-tk = [tokenStream getToken];
-if (!tk) { NSLog(@"END2"); return; }
-NSLog(@"%c", tk->kind);
-
-tk = [tokenStream getToken];
-if (!tk) { NSLog(@"END3"); return; }
-NSLog(@"%c, %@", tk->kind, tk->value);
-
-tk = [tokenStream getToken];
-if (!tk) { NSLog(@"END4"); return; }
-NSLog(@"%c", tk->kind);
- */
 
 @end
