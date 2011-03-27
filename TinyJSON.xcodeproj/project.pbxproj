@@ -1,0 +1,405 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C302828F133EE1D200A1D501 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C302828E133EE1D200A1D501 /* Foundation.framework */; };
+		C3028292133EE1D200A1D501 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3028291133EE1D200A1D501 /* main.m */; };
+		C302829D133EFB2100A1D501 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C302829C133EFB2100A1D501 /* JsonParser.m */; };
+		C31D34F5133F32490088DAA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30282F0133F317700A1D501 /* Cocoa.framework */; };
+		C31D34FB133F32490088DAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C31D34F9133F32490088DAA7 /* InfoPlist.strings */; };
+		C31D34FE133F32490088DAA7 /* TinyJSONTest.h in Resources */ = {isa = PBXBuildFile; fileRef = C31D34FD133F32490088DAA7 /* TinyJSONTest.h */; };
+		C31D3500133F32490088DAA7 /* TinyJSONTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C31D34FF133F32490088DAA7 /* TinyJSONTest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C3028288133EE1D200A1D501 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C302828A133EE1D200A1D501 /* TinyJSON */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TinyJSON; sourceTree = BUILT_PRODUCTS_DIR; };
+		C302828E133EE1D200A1D501 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C3028291133EE1D200A1D501 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C3028294133EE1D200A1D501 /* TinyJSON-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinyJSON-Prefix.pch"; sourceTree = "<group>"; };
+		C3028295133EE1D200A1D501 /* TinyJSON.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = TinyJSON.1; sourceTree = "<group>"; };
+		C302829B133EFB2100A1D501 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParser.h; sourceTree = "<group>"; };
+		C302829C133EFB2100A1D501 /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParser.m; sourceTree = "<group>"; };
+		C30282F0133F317700A1D501 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		C30282F3133F317700A1D501 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		C30282F4133F317700A1D501 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C30282F5133F317700A1D501 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C31D34F4133F32490088DAA7 /* TinyJSONTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyJSONTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C31D34F8133F32490088DAA7 /* TinyJSONTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinyJSONTest-Info.plist"; sourceTree = "<group>"; };
+		C31D34FA133F32490088DAA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C31D34FC133F32490088DAA7 /* TinyJSONTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinyJSONTest-Prefix.pch"; sourceTree = "<group>"; };
+		C31D34FD133F32490088DAA7 /* TinyJSONTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyJSONTest.h; sourceTree = "<group>"; };
+		C31D34FF133F32490088DAA7 /* TinyJSONTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinyJSONTest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C3028287133EE1D200A1D501 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C302828F133EE1D200A1D501 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31D34F0133F32490088DAA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31D34F5133F32490088DAA7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C302827F133EE1D200A1D501 = {
+			isa = PBXGroup;
+			children = (
+				C3028290133EE1D200A1D501 /* TinyJSON */,
+				C31D34F6133F32490088DAA7 /* TinyJSONTest */,
+				C302828D133EE1D200A1D501 /* Frameworks */,
+				C302828B133EE1D200A1D501 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C302828B133EE1D200A1D501 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C302828A133EE1D200A1D501 /* TinyJSON */,
+				C31D34F4133F32490088DAA7 /* TinyJSONTest.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C302828D133EE1D200A1D501 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C302828E133EE1D200A1D501 /* Foundation.framework */,
+				C30282F0133F317700A1D501 /* Cocoa.framework */,
+				C30282F2133F317700A1D501 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3028290133EE1D200A1D501 /* TinyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				C3028291133EE1D200A1D501 /* main.m */,
+				C302829B133EFB2100A1D501 /* JsonParser.h */,
+				C302829C133EFB2100A1D501 /* JsonParser.m */,
+				C3028295133EE1D200A1D501 /* TinyJSON.1 */,
+				C3028293133EE1D200A1D501 /* Supporting Files */,
+			);
+			path = TinyJSON;
+			sourceTree = "<group>";
+		};
+		C3028293133EE1D200A1D501 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C3028294133EE1D200A1D501 /* TinyJSON-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C30282F2133F317700A1D501 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C30282F3133F317700A1D501 /* AppKit.framework */,
+				C30282F4133F317700A1D501 /* CoreData.framework */,
+				C30282F5133F317700A1D501 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		C31D34F6133F32490088DAA7 /* TinyJSONTest */ = {
+			isa = PBXGroup;
+			children = (
+				C31D34FD133F32490088DAA7 /* TinyJSONTest.h */,
+				C31D34FF133F32490088DAA7 /* TinyJSONTest.m */,
+				C31D34F7133F32490088DAA7 /* Supporting Files */,
+			);
+			path = TinyJSONTest;
+			sourceTree = "<group>";
+		};
+		C31D34F7133F32490088DAA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C31D34F8133F32490088DAA7 /* TinyJSONTest-Info.plist */,
+				C31D34F9133F32490088DAA7 /* InfoPlist.strings */,
+				C31D34FC133F32490088DAA7 /* TinyJSONTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C3028289133EE1D200A1D501 /* TinyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3028298133EE1D200A1D501 /* Build configuration list for PBXNativeTarget "TinyJSON" */;
+			buildPhases = (
+				C3028286133EE1D200A1D501 /* Sources */,
+				C3028287133EE1D200A1D501 /* Frameworks */,
+				C3028288133EE1D200A1D501 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinyJSON;
+			productName = TinyJSON;
+			productReference = C302828A133EE1D200A1D501 /* TinyJSON */;
+			productType = "com.apple.product-type.tool";
+		};
+		C31D34F3133F32490088DAA7 /* TinyJSONTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C31D3503133F32490088DAA7 /* Build configuration list for PBXNativeTarget "TinyJSONTest" */;
+			buildPhases = (
+				C31D34EF133F32490088DAA7 /* Sources */,
+				C31D34F0133F32490088DAA7 /* Frameworks */,
+				C31D34F1133F32490088DAA7 /* Resources */,
+				C31D34F2133F32490088DAA7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TinyJSONTest;
+			productName = TinyJSONTest;
+			productReference = C31D34F4133F32490088DAA7 /* TinyJSONTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C3028281133EE1D200A1D501 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C3028284133EE1D200A1D501 /* Build configuration list for PBXProject "TinyJSON" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C302827F133EE1D200A1D501;
+			productRefGroup = C302828B133EE1D200A1D501 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C3028289133EE1D200A1D501 /* TinyJSON */,
+				C31D34F3133F32490088DAA7 /* TinyJSONTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C31D34F1133F32490088DAA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31D34FB133F32490088DAA7 /* InfoPlist.strings in Resources */,
+				C31D34FE133F32490088DAA7 /* TinyJSONTest.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C31D34F2133F32490088DAA7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C3028286133EE1D200A1D501 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3028292133EE1D200A1D501 /* main.m in Sources */,
+				C302829D133EFB2100A1D501 /* JsonParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C31D34EF133F32490088DAA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C31D3500133F32490088DAA7 /* TinyJSONTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C31D34F9133F32490088DAA7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C31D34FA133F32490088DAA7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C3028296133EE1D200A1D501 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C3028297133EE1D200A1D501 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		C3028299133EE1D200A1D501 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TinyJSON/TinyJSON-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C302829A133EE1D200A1D501 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TinyJSON/TinyJSON-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C31D3501133F32490088DAA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TinyJSON";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TinyJSONTest/TinyJSONTest-Prefix.pch";
+				INFOPLIST_FILE = "TinyJSONTest/TinyJSONTest-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C31D3502133F32490088DAA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TinyJSON";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TinyJSONTest/TinyJSONTest-Prefix.pch";
+				INFOPLIST_FILE = "TinyJSONTest/TinyJSONTest-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C3028284133EE1D200A1D501 /* Build configuration list for PBXProject "TinyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3028296133EE1D200A1D501 /* Debug */,
+				C3028297133EE1D200A1D501 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3028298133EE1D200A1D501 /* Build configuration list for PBXNativeTarget "TinyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C3028299133EE1D200A1D501 /* Debug */,
+				C302829A133EE1D200A1D501 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C31D3503133F32490088DAA7 /* Build configuration list for PBXNativeTarget "TinyJSONTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C31D3501133F32490088DAA7 /* Debug */,
+				C31D3502133F32490088DAA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C3028281133EE1D200A1D501 /* Project object */;
+}

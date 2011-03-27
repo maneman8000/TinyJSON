@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'TinyJSONTest' target in the 'TinyJSONTest' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
