@@ -39,10 +39,15 @@
 }
 
 - (void)testGetTokenSymbols1 {
-    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" {\n } "];
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" {\n : } "];
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
     STAssertTrue(t->kind == '{', @"kind %c", t->kind);
+    STAssertNil(t->value, @"value nil");
+    
+    t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == ':', @"kind %c", t->kind);
     STAssertNil(t->value, @"value nil");
 
     t = [tokenStream getToken];
@@ -66,27 +71,6 @@
     STAssertTrue(t->kind == ']', @"kind %c", t->kind);
     STAssertNil(t->value, @"value nil");
     
-    t = [tokenStream getToken];
-    STAssertNil(t, @"getToken end");
-}
-
-- (void)testGetTokenSymbols3 {
-    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" :\n \" , "];
-    Token *t = [tokenStream getToken];
-    STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == ':', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
-    
-    t = [tokenStream getToken];
-    STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == '"', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
-
-    t = [tokenStream getToken];
-    STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == ',', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
-
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
 }
@@ -146,15 +130,99 @@
 
 - (void)testGetTokenString1 {
     TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" \"abcde\""];
-/*    
+   
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 'n', @"kind %c", t->kind);
-    STAssertEquals([t->value doubleValue], 0.0, @"value %f", [t->value doubleValue]);
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@"abcde"], @"value %@", t->value);
+
+    t = [tokenStream getToken];
+    STAssertNil(t, @"getToken end");
+}
+
+- (void)testGetTokenString2 {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" \"abcde\"  \"a\""];
+    
+    Token *t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@"abcde"], @"value %@", t->value);
+    
+    t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@"a"], @"value %@", t->value);
+
+    t = [tokenStream getToken];
+    STAssertNil(t, @"getToken end");
+}
+
+- (void)testGetTokenString3 {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@"\"\""];
+    
+    Token *t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@""], @"value %@", t->value);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
- */
+}
+
+- (void)testGetTokenString4 {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@"\"abcd"];
+    
+    Token *t = [tokenStream getToken];
+    STAssertNil(t, @"error string");
+
+    t = [tokenStream getToken];
+    STAssertNil(t, @"error string 2");
+}
+
+- (void)testGetTokenString5 {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@"\""];
+    
+    Token *t = [tokenStream getToken];
+    STAssertNil(t, @"error string");
+    
+    t = [tokenStream getToken];
+    STAssertNil(t, @"error string 2");
+}
+
+- (void)testGetTokenString6 {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" \"123.0\"  "];
+
+    Token *t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@"123.0"], @"value %@", t->value);
+    
+    t = [tokenStream getToken];
+    STAssertNil(t, @"getToken end");
+}
+
+- (void)testGetTokenString7 {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" \"I am\n :dog,\""];
+    
+    Token *t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@"I am\n :dog,"], @"value %@", t->value);
+    
+    t = [tokenStream getToken];
+    STAssertNil(t, @"getToken end");
+}
+
+- (void)testGetTokenString8 {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" \"abc\\\"hoge\\\"\"  "];
+    
+    Token *t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@"abc\"hoge\""], @"value %@", t->value);
+    
+    t = [tokenStream getToken];
+    STAssertNil(t, @"getToken end");
 }
 
 @end

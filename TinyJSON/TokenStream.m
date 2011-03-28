@@ -63,8 +63,6 @@ SR.location = R.location + R.length;
     //    NSLog(@"{%lu, %lu}", searchRange.location, searchRange.length);
     switch ([inputString characterAtIndex:r.location]) {
         // symbols
-        case 0x0022:
-            return [Token tokenWithKind:'"' value:nil];
         case 0x002C:
             return [Token tokenWithKind:',' value:nil];
         case 0x003A:
@@ -89,8 +87,26 @@ SR.location = R.location + R.length;
             return [Token tokenWithKind:'n'
                                   value:[NSNumber numberWithDouble:[[inputString substringWithRange:rr] doubleValue]]];
         }
-        // 'unicode string' or 'true' or 'false' or 'null'
-        default:
+        // string
+        case 0x0022:
+        {
+            NSRange tempsr = { searchRange.location, searchRange.length };
+            do {
+                r = [inputString rangeOfString:@"\"" options:0 range:tempsr];
+                UPDATE_SEARCH_RANGE(tempsr, r);
+            } while (r.location < [inputString length] && [inputString characterAtIndex:r.location - 1] == 0x005C);
+            if (r.location >= [inputString length]) {
+                searchRange.location = [inputString length];
+                return nil;
+            }
+            NSRange rr = { searchRange.location, r.location - searchRange.location };
+            searchRange.location = r.location + 1;
+            searchRange.length = [inputString length] - r.location - 1;
+            return [Token tokenWithKind:'s' value:[[inputString substringWithRange:rr]
+                                                   stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""]];
+        }
+        // true, false, null
+        case 0x0066: case 0x0074: case 0x006E:
         {
             r = [inputString rangeOfCharacterFromSet:notStringSet options:0 range:searchRange];
             if (r.location >= [inputString length]) r.location = [inputString length];
@@ -106,7 +122,7 @@ SR.location = R.location + R.length;
             else if ([result isEqualToString:@"null"]) {
                 return [Token tokenWithKind:'0' value:nil];
             }
-            return [Token tokenWithKind:'s' value:[inputString substringWithRange:rr]];
+            return nil;
         }
     }
     return nil;

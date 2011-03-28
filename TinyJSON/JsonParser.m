@@ -77,12 +77,8 @@
 }
 
 - (NSDictionary*)parseFromString:(NSString*)input {
-    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" 0.00000 -12"];
-    Token *t = [tokenStream getToken];
-    t = [tokenStream getToken];
-    NSLog(@"%c, %f", t->kind, [t->value doubleValue]);
-//    tokenStream = [[TokenStream alloc] initWithString:input];
-//    return [self object];
+    tokenStream = [[TokenStream alloc] initWithString:input];
+    return [self object];
 }
 
 @end
