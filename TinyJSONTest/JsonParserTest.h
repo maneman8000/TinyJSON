@@ -11,6 +11,7 @@
 
 @interface JsonParserTest : SenTestCase {
 @private
+    NSAutoreleasePool * pool;
     JsonParser *parser;
 }
 

@@ -14,10 +14,12 @@
 - (void)setUp
 {
     [super setUp];
+    pool = [[NSAutoreleasePool alloc] init];
 }
 
 - (void)tearDown
 {
+    [pool drain];
     [super tearDown];
 }
 
@@ -42,18 +44,18 @@
     TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" {\n : } "];
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == '{', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
+    STAssertTrue(t.kind == '{', @"kind %c", t.kind);
+    STAssertNil(t.value, @"value nil");
     
     t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == ':', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
+    STAssertTrue(t.kind == ':', @"kind %c", t.kind);
+    STAssertNil(t.value, @"value nil");
 
     t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == '}', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
+    STAssertTrue(t.kind == '}', @"kind %c", t.kind);
+    STAssertNil(t.value, @"value nil");
 
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -63,13 +65,13 @@
     TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" [\n ] "];
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == '[', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
+    STAssertTrue(t.kind == '[', @"kind %c", t.kind);
+    STAssertNil(t.value, @"value nil");
     
     t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == ']', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
+    STAssertTrue(t.kind == ']', @"kind %c", t.kind);
+    STAssertNil(t.value, @"value nil");
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -80,8 +82,8 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 'n', @"kind %c", t->kind);
-    STAssertEquals([t->value doubleValue], -123.456789, @"value %f", [t->value doubleValue]);
+    STAssertTrue(t.kind == 'n', @"kind %c", t.kind);
+    STAssertEquals([t.value doubleValue], -123.456789, @"value %f", [t.value doubleValue]);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -92,8 +94,8 @@
 
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 'n', @"kind %c", t->kind);
-    STAssertEquals([t->value doubleValue], 0.000009, @"value %f", [t->value doubleValue]);
+    STAssertTrue(t.kind == 'n', @"kind %c", t.kind);
+    STAssertEquals([t.value doubleValue], 0.000009, @"value %f", [t.value doubleValue]);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -104,13 +106,13 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 'n', @"kind %c", t->kind);
-    STAssertEquals([t->value doubleValue], 0.0, @"value %f", [t->value doubleValue]);
+    STAssertTrue(t.kind == 'n', @"kind %c", t.kind);
+    STAssertEquals([t.value doubleValue], 0.0, @"value %f", [t.value doubleValue]);
 
     t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 'n', @"kind %c", t->kind);
-    STAssertEquals([t->value doubleValue], -12.0, @"value %f", [t->value doubleValue]);
+    STAssertTrue(t.kind == 'n', @"kind %c", t.kind);
+    STAssertEquals([t.value doubleValue], -12.0, @"value %f", [t.value doubleValue]);
 
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -121,8 +123,8 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 'n', @"kind %c", t->kind);
-    STAssertEquals([t->value doubleValue], 0.0, @"value %f", [t->value doubleValue]);
+    STAssertTrue(t.kind == 'n', @"kind %c", t.kind);
+    STAssertEquals([t.value doubleValue], 0.0, @"value %f", [t.value doubleValue]);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -133,8 +135,8 @@
    
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@"abcde"], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@"abcde"], @"value %@", t.value);
 
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -145,13 +147,13 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@"abcde"], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@"abcde"], @"value %@", t.value);
     
     t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@"a"], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@"a"], @"value %@", t.value);
 
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -162,8 +164,8 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@""], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@""], @"value %@", t.value);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -194,8 +196,8 @@
 
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@"123.0"], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@"123.0"], @"value %@", t.value);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -206,8 +208,8 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@"I am\n :dog,"], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@"I am\n :dog,"], @"value %@", t.value);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -218,8 +220,8 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@"abc\"hoge\""], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@"abc\"hoge\""], @"value %@", t.value);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -230,18 +232,18 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 't', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
+    STAssertTrue(t.kind == 't', @"kind %c", t.kind);
+    STAssertNil(t.value, @"value nil");
 
     t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 'f', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
+    STAssertTrue(t.kind == 'f', @"kind %c", t.kind);
+    STAssertNil(t.value, @"value nil");
 
     t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == '0', @"kind %c", t->kind);
-    STAssertNil(t->value, @"value nil");
+    STAssertTrue(t.kind == '0', @"kind %c", t.kind);
+    STAssertNil(t.value, @"value nil");
 
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");
@@ -252,15 +254,15 @@
     
     Token *t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@"abcde"], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@"abcde"], @"value %@", t.value);
     
     [tokenStream setPushBack:t];
 
     t = [tokenStream getToken];
     STAssertNotNil(t, @"not nil");
-    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
-    STAssertTrue([t->value isEqualToString:@"abcde"], @"value %@", t->value);
+    STAssertTrue(t.kind == 's', @"kind %c", t.kind);
+    STAssertTrue([t.value isEqualToString:@"abcde"], @"value %@", t.value);
     
     t = [tokenStream getToken];
     STAssertNil(t, @"getToken end");

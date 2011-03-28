@@ -10,6 +10,8 @@
 #import "TokenStream.h"
 
 @interface TokenStreamTest : SenTestCase {
+@private
+    NSAutoreleasePool * pool;
 }
 
 @end
