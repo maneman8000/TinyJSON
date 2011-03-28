@@ -10,11 +10,21 @@
 		C302828F133EE1D200A1D501 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C302828E133EE1D200A1D501 /* Foundation.framework */; };
 		C3028292133EE1D200A1D501 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3028291133EE1D200A1D501 /* main.m */; };
 		C302829D133EFB2100A1D501 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = C302829C133EFB2100A1D501 /* JsonParser.m */; };
-		C31D34F5133F32490088DAA7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30282F0133F317700A1D501 /* Cocoa.framework */; };
-		C31D34FB133F32490088DAA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C31D34F9133F32490088DAA7 /* InfoPlist.strings */; };
-		C31D34FE133F32490088DAA7 /* TinyJSONTest.h in Resources */ = {isa = PBXBuildFile; fileRef = C31D34FD133F32490088DAA7 /* TinyJSONTest.h */; };
-		C31D3500133F32490088DAA7 /* TinyJSONTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C31D34FF133F32490088DAA7 /* TinyJSONTest.m */; };
+		C3A6604F133FF9EF00719640 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30282F0133F317700A1D501 /* Cocoa.framework */; };
+		C3A66055133FF9EF00719640 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3A66053133FF9EF00719640 /* InfoPlist.strings */; };
+		C3A66062133FFA9D00719640 /* TokenStreamTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A66061133FFA9D00719640 /* TokenStreamTest.m */; };
+		C3A66065133FFDF000719640 /* TokenStream.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A66064133FFDF000719640 /* TokenStream.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C3A6605E133FFA1700719640 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3028281133EE1D200A1D501 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3028289133EE1D200A1D501;
+			remoteInfo = TinyJSON;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C3028288133EE1D200A1D501 /* CopyFiles */ = {
@@ -40,12 +50,14 @@
 		C30282F3133F317700A1D501 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		C30282F4133F317700A1D501 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C30282F5133F317700A1D501 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C31D34F4133F32490088DAA7 /* TinyJSONTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyJSONTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C31D34F8133F32490088DAA7 /* TinyJSONTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinyJSONTest-Info.plist"; sourceTree = "<group>"; };
-		C31D34FA133F32490088DAA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C31D34FC133F32490088DAA7 /* TinyJSONTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinyJSONTest-Prefix.pch"; sourceTree = "<group>"; };
-		C31D34FD133F32490088DAA7 /* TinyJSONTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TinyJSONTest.h; sourceTree = "<group>"; };
-		C31D34FF133F32490088DAA7 /* TinyJSONTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TinyJSONTest.m; sourceTree = "<group>"; };
+		C3A6604E133FF9EF00719640 /* TinyJSONTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyJSONTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3A66052133FF9EF00719640 /* TinyJSONTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinyJSONTest-Info.plist"; sourceTree = "<group>"; };
+		C3A66054133FF9EF00719640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C3A66056133FF9EF00719640 /* TinyJSONTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinyJSONTest-Prefix.pch"; sourceTree = "<group>"; };
+		C3A66060133FFA9D00719640 /* TokenStreamTest.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TokenStreamTest.h; sourceTree = "<group>"; };
+		C3A66061133FFA9D00719640 /* TokenStreamTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenStreamTest.m; sourceTree = "<group>"; };
+		C3A66063133FFDF000719640 /* TokenStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenStream.h; sourceTree = "<group>"; };
+		C3A66064133FFDF000719640 /* TokenStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenStream.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,11 +69,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C31D34F0133F32490088DAA7 /* Frameworks */ = {
+		C3A6604A133FF9EF00719640 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31D34F5133F32490088DAA7 /* Cocoa.framework in Frameworks */,
+				C3A6604F133FF9EF00719640 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				C3028290133EE1D200A1D501 /* TinyJSON */,
-				C31D34F6133F32490088DAA7 /* TinyJSONTest */,
+				C3A66050133FF9EF00719640 /* TinyJSONTest */,
 				C302828D133EE1D200A1D501 /* Frameworks */,
 				C302828B133EE1D200A1D501 /* Products */,
 			);
@@ -82,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				C302828A133EE1D200A1D501 /* TinyJSON */,
-				C31D34F4133F32490088DAA7 /* TinyJSONTest.octest */,
+				C3A6604E133FF9EF00719640 /* TinyJSONTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +115,8 @@
 				C3028291133EE1D200A1D501 /* main.m */,
 				C302829B133EFB2100A1D501 /* JsonParser.h */,
 				C302829C133EFB2100A1D501 /* JsonParser.m */,
+				C3A66063133FFDF000719640 /* TokenStream.h */,
+				C3A66064133FFDF000719640 /* TokenStream.m */,
 				C3028295133EE1D200A1D501 /* TinyJSON.1 */,
 				C3028293133EE1D200A1D501 /* Supporting Files */,
 			);
@@ -127,22 +141,22 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		C31D34F6133F32490088DAA7 /* TinyJSONTest */ = {
+		C3A66050133FF9EF00719640 /* TinyJSONTest */ = {
 			isa = PBXGroup;
 			children = (
-				C31D34FD133F32490088DAA7 /* TinyJSONTest.h */,
-				C31D34FF133F32490088DAA7 /* TinyJSONTest.m */,
-				C31D34F7133F32490088DAA7 /* Supporting Files */,
+				C3A66060133FFA9D00719640 /* TokenStreamTest.h */,
+				C3A66061133FFA9D00719640 /* TokenStreamTest.m */,
+				C3A66051133FF9EF00719640 /* Supporting Files */,
 			);
 			path = TinyJSONTest;
 			sourceTree = "<group>";
 		};
-		C31D34F7133F32490088DAA7 /* Supporting Files */ = {
+		C3A66051133FF9EF00719640 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C31D34F8133F32490088DAA7 /* TinyJSONTest-Info.plist */,
-				C31D34F9133F32490088DAA7 /* InfoPlist.strings */,
-				C31D34FC133F32490088DAA7 /* TinyJSONTest-Prefix.pch */,
+				C3A66052133FF9EF00719640 /* TinyJSONTest-Info.plist */,
+				C3A66053133FF9EF00719640 /* InfoPlist.strings */,
+				C3A66056133FF9EF00719640 /* TinyJSONTest-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -167,22 +181,23 @@
 			productReference = C302828A133EE1D200A1D501 /* TinyJSON */;
 			productType = "com.apple.product-type.tool";
 		};
-		C31D34F3133F32490088DAA7 /* TinyJSONTest */ = {
+		C3A6604D133FF9EF00719640 /* TinyJSONTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C31D3503133F32490088DAA7 /* Build configuration list for PBXNativeTarget "TinyJSONTest" */;
+			buildConfigurationList = C3A6605B133FF9EF00719640 /* Build configuration list for PBXNativeTarget "TinyJSONTest" */;
 			buildPhases = (
-				C31D34EF133F32490088DAA7 /* Sources */,
-				C31D34F0133F32490088DAA7 /* Frameworks */,
-				C31D34F1133F32490088DAA7 /* Resources */,
-				C31D34F2133F32490088DAA7 /* ShellScript */,
+				C3A66049133FF9EF00719640 /* Sources */,
+				C3A6604A133FF9EF00719640 /* Frameworks */,
+				C3A6604B133FF9EF00719640 /* Resources */,
+				C3A6604C133FF9EF00719640 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C3A6605F133FFA1700719640 /* PBXTargetDependency */,
 			);
 			name = TinyJSONTest;
 			productName = TinyJSONTest;
-			productReference = C31D34F4133F32490088DAA7 /* TinyJSONTest.octest */;
+			productReference = C3A6604E133FF9EF00719640 /* TinyJSONTest.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -203,25 +218,24 @@
 			projectRoot = "";
 			targets = (
 				C3028289133EE1D200A1D501 /* TinyJSON */,
-				C31D34F3133F32490088DAA7 /* TinyJSONTest */,
+				C3A6604D133FF9EF00719640 /* TinyJSONTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C31D34F1133F32490088DAA7 /* Resources */ = {
+		C3A6604B133FF9EF00719640 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31D34FB133F32490088DAA7 /* InfoPlist.strings in Resources */,
-				C31D34FE133F32490088DAA7 /* TinyJSONTest.h in Resources */,
+				C3A66055133FF9EF00719640 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C31D34F2133F32490088DAA7 /* ShellScript */ = {
+		C3A6604C133FF9EF00719640 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -243,24 +257,33 @@
 			files = (
 				C3028292133EE1D200A1D501 /* main.m in Sources */,
 				C302829D133EFB2100A1D501 /* JsonParser.m in Sources */,
+				C3A66065133FFDF000719640 /* TokenStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C31D34EF133F32490088DAA7 /* Sources */ = {
+		C3A66049133FF9EF00719640 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C31D3500133F32490088DAA7 /* TinyJSONTest.m in Sources */,
+				C3A66062133FFA9D00719640 /* TokenStreamTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C3A6605F133FFA1700719640 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C3028289133EE1D200A1D501 /* TinyJSON */;
+			targetProxy = C3A6605E133FFA1700719640 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		C31D34F9133F32490088DAA7 /* InfoPlist.strings */ = {
+		C3A66053133FF9EF00719640 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C31D34FA133F32490088DAA7 /* en */,
+				C3A66054133FF9EF00719640 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -326,7 +349,7 @@
 			};
 			name = Release;
 		};
-		C31D3501133F32490088DAA7 /* Debug */ = {
+		C3A6605C133FF9EF00719640 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -343,12 +366,13 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		C31D3502133F32490088DAA7 /* Release */ = {
+		C3A6605D133FF9EF00719640 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -365,6 +389,7 @@
 					SenTestingKit,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -391,11 +416,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C31D3503133F32490088DAA7 /* Build configuration list for PBXNativeTarget "TinyJSONTest" */ = {
+		C3A6605B133FF9EF00719640 /* Build configuration list for PBXNativeTarget "TinyJSONTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C31D3501133F32490088DAA7 /* Debug */,
-				C31D3502133F32490088DAA7 /* Release */,
+				C3A6605C133FF9EF00719640 /* Debug */,
+				C3A6605D133FF9EF00719640 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

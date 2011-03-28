@@ -15,8 +15,7 @@ int main (int argc, const char * argv[])
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
     JsonParser *parser = [[JsonParser alloc] init];
-//    [parser parseFromString:@"  { \"access_token\" = \"123.4\", }"];
-    [parser parseFromString:@"  \""];
+    [parser parseFromString:@"  { \"access_token\" = \"123.4\", }"];
     // insert code here...
     NSLog(@"Hello, World!");
 

@@ -15,6 +15,6 @@
 }
 
 - (id)init;
-- (NSDictionary*)parseFromString:(NSString*)input;
+- (NSMutableDictionary*)parseFromString:(NSString*)input;
 
 @end

@@ -15,7 +15,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C31D34F3133F32490088DAA7"
+               BlueprintIdentifier = "C3A6604D133FF9EF00719640"
                BuildableName = "TinyJSONTest.octest"
                BlueprintName = "TinyJSONTest"
                ReferencedContainer = "container:TinyJSON.xcodeproj">
