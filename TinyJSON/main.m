@@ -15,10 +15,10 @@ int main (int argc, const char * argv[])
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
     JsonParser *parser = [[JsonParser alloc] init];
-    NSMutableDictionary *result = [parser parseFromString:@"  { \"access_token\" : \"123.4\" }"];
-    // insert code here...
-    for (id key in [result allKeys]) {
-        NSLog(@"%@ -> %@", key, [result objectForKey:key]);
+    NSMutableDictionary *result = [parser parseFromString:@"  { \"access_token\" : \"123.4\", \"hge\" : [ 1, 2, 3], }"];
+    NSMutableArray *ar = [result objectForKey:@"hge"];
+    for (id e in [result objectForKey:@"hge"]) {
+        NSLog(@"%f", [e doubleValue]);
     }
 
     [pool drain];

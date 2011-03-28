@@ -14,6 +14,7 @@
 		C3A66055133FF9EF00719640 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C3A66053133FF9EF00719640 /* InfoPlist.strings */; };
 		C3A66062133FFA9D00719640 /* TokenStreamTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A66061133FFA9D00719640 /* TokenStreamTest.m */; };
 		C3A66065133FFDF000719640 /* TokenStream.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A66064133FFDF000719640 /* TokenStream.m */; };
+		C3C65C27134045FA00F7601C /* JsonParserTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C65C26134045FA00F7601C /* JsonParserTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +55,12 @@
 		C3A66052133FF9EF00719640 /* TinyJSONTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TinyJSONTest-Info.plist"; sourceTree = "<group>"; };
 		C3A66054133FF9EF00719640 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C3A66056133FF9EF00719640 /* TinyJSONTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinyJSONTest-Prefix.pch"; sourceTree = "<group>"; };
-		C3A66060133FFA9D00719640 /* TokenStreamTest.h */ = {isa = PBXFileReference; fileEncoding = 4; path = TokenStreamTest.h; sourceTree = "<group>"; };
+		C3A66060133FFA9D00719640 /* TokenStreamTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenStreamTest.h; sourceTree = "<group>"; };
 		C3A66061133FFA9D00719640 /* TokenStreamTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenStreamTest.m; sourceTree = "<group>"; };
 		C3A66063133FFDF000719640 /* TokenStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TokenStream.h; sourceTree = "<group>"; };
 		C3A66064133FFDF000719640 /* TokenStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TokenStream.m; sourceTree = "<group>"; };
+		C3C65C25134045FA00F7601C /* JsonParserTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonParserTest.h; sourceTree = "<group>"; };
+		C3C65C26134045FA00F7601C /* JsonParserTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonParserTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				C3A66060133FFA9D00719640 /* TokenStreamTest.h */,
 				C3A66061133FFA9D00719640 /* TokenStreamTest.m */,
 				C3A66051133FF9EF00719640 /* Supporting Files */,
+				C3C65C25134045FA00F7601C /* JsonParserTest.h */,
+				C3C65C26134045FA00F7601C /* JsonParserTest.m */,
 			);
 			path = TinyJSONTest;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A66062133FFA9D00719640 /* TokenStreamTest.m in Sources */,
+				C3C65C27134045FA00F7601C /* JsonParserTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +429,7 @@
 				C3A6605D133FF9EF00719640 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

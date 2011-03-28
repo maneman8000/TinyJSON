@@ -9,6 +9,11 @@
 #import "JsonParser.h"
 #import "TokenStream.h"
 
+@interface JsonParser (Local)
+- (NSMutableDictionary*)object;
+- (NSMutableArray*)array;
+@end
+
 @implementation JsonParser
 
 - (id)init {
@@ -33,34 +38,86 @@
  *
  * ARRAY -> "[" ARRAY-CONTENTS "]"
  * ARRAY-CONTENTS -> VALUE "," ARRAY-CONTENTS
- * ARRAY-CONTENTS -> ""
+ * ARRAY-CONTENTS -> VALUE
  *
  * VALUE -> STRING
  * VALUE -> NUMBER
  * VALUE -> OBJECT
  * VALUE -> ARRAY
  * VALUE -> "true" | "false" | "null"
+ * VALUE -> ""
  */
 
 - (id)value {
-    // stub
     Token *t = [tokenStream getToken];
-    return @"value";
+    switch (t->kind) {
+        case 's': case 'n':
+            return t->value;
+        case 't':
+            return [NSNumber numberWithBool:YES];
+        case 'f':
+            return [NSNumber numberWithBool:NO];
+        case '0':
+            return nil;
+        case '{':
+            [tokenStream setPushBack:t];
+            return [self object];
+        case '[':
+            [tokenStream setPushBack:t];
+            return [self array];
+    }
+    [tokenStream setPushBack:t];
+    return nil;
 }
 
-- (void)objectContents:(NSMutableDictionary*)dict {
+- (void)arrayContents:(NSMutableArray*)result {
+    id value = [self value];
+    if (!value) return;
+    [result addObject:value];
+
+    Token *t = [tokenStream getToken];
+    if (!t || t->kind != ',') {
+        [tokenStream setPushBack:t];
+        return;
+    }
+    
+    return [self arrayContents:result];
+}
+
+- (NSMutableArray*)array {
+    Token *t = [tokenStream getToken];
+    if (!t || t->kind != '[') return nil;
+    
+    NSMutableArray *result = [[[NSMutableArray alloc] init] autorelease];
+    [self arrayContents:result];
+    
+    t = [tokenStream getToken];
+    if (!t || t->kind != ']') return nil;
+    return result;
+}
+
+- (void)objectContents:(NSMutableDictionary*)result {
 
     Token *key = [tokenStream getToken];
-    if (!key || key->kind != 's') return;
-//    NSLog(@"objectContetns : find key : %@", key->value);
+    if (!key || key->kind != 's') {
+        [tokenStream setPushBack:key];
+        return;
+    }
 
     Token *t = [tokenStream getToken];
     if (!t || t->kind != ':') return;
 
     id val = [self value];
-    [dict setObject:val forKey:key->value];
-    
-    return;
+    if (!val) return;
+    [result setObject:val forKey:key->value];
+
+    t = [tokenStream getToken];
+    if (!t || t->kind != ',') {
+        [tokenStream setPushBack:key];
+        return;
+    }
+
+    return [self objectContents:result];
 }
 
 - (NSMutableDictionary*)object {
