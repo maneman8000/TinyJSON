@@ -44,24 +44,23 @@
 
 - (id)value {
     // stub
-    return nil;
+    Token *t = [tokenStream getToken];
+    return @"value";
 }
 
-- (NSMutableDictionary*)objectContents:(NSMutableDictionary*)dict {
+- (void)objectContents:(NSMutableDictionary*)dict {
+
+    Token *key = [tokenStream getToken];
+    if (!key || key->kind != 's') return;
+//    NSLog(@"objectContetns : find key : %@", key->value);
+
     Token *t = [tokenStream getToken];
-    if (!t) return nil;
-
-    t = [tokenStream getToken];
-    if (!t || t->kind != 's') return nil;
-    NSLog(@"objectContetns : find string : %@", t->value);
-
-    t = [tokenStream getToken];
-    if (!t || t->kind != ':') return nil;
+    if (!t || t->kind != ':') return;
 
     id val = [self value];
-    // add 
+    [dict setObject:val forKey:key->value];
     
-    return nil;
+    return;
 }
 
 - (NSMutableDictionary*)object {
