@@ -31,6 +31,7 @@
 @end
 
 @implementation TokenStream
+@synthesize pushBack;
 
 - (id)initWithString:(NSString*)input {
     if ((self = [super init]) != nil) {
@@ -56,6 +57,11 @@ SR.length -= R.location + R.length - SR.location; \
 SR.location = R.location + R.length;
 
 - (Token*)getToken {
+    if (pushBack) {
+        Token *temp = [self.pushBack retain];
+        [self setPushBack:nil];
+        return [temp autorelease];
+    }
     // skip whitespace
     NSRange r = [inputString rangeOfCharacterFromSet:notSpaceSet options:0 range:searchRange];
     if (r.location >= [inputString length]) return nil;

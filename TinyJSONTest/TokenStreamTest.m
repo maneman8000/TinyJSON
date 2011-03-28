@@ -247,4 +247,23 @@
     STAssertNil(t, @"getToken end");
 }
 
+- (void)testPushBack {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@" \"abcde\""];
+    
+    Token *t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@"abcde"], @"value %@", t->value);
+    
+    [tokenStream setPushBack:t];
+
+    t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 's', @"kind %c", t->kind);
+    STAssertTrue([t->value isEqualToString:@"abcde"], @"value %@", t->value);
+    
+    t = [tokenStream getToken];
+    STAssertNil(t, @"getToken end");
+}
+
 @end

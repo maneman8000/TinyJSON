@@ -31,7 +31,9 @@
     NSCharacterSet *notSpaceSet;
     NSCharacterSet *notNumberSet;
     NSCharacterSet *notStringSet;
+    Token *pushBack;
 }
+@property (nonatomic, retain) Token *pushBack;
 - (id)initWithString:(NSString*)input;
 - (Token*)getToken;
 @end
