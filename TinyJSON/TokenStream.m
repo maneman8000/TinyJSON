@@ -117,7 +117,7 @@ SR.location = R.location + R.length;
                 return [Token tokenWithKind:'t' value:nil];
             }
             else if ([result isEqualToString:@"false"]) {
-                return [Token tokenWithKind:'n' value:nil];
+                return [Token tokenWithKind:'f' value:nil];
             }
             else if ([result isEqualToString:@"null"]) {
                 return [Token tokenWithKind:'0' value:nil];

@@ -225,4 +225,26 @@
     STAssertNil(t, @"getToken end");
 }
 
+- (void)testGetTokenOtherSymbols1 {
+    TokenStream *tokenStream = [[TokenStream alloc] initWithString:@"true false null"];
+    
+    Token *t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 't', @"kind %c", t->kind);
+    STAssertNil(t->value, @"value nil");
+
+    t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == 'f', @"kind %c", t->kind);
+    STAssertNil(t->value, @"value nil");
+
+    t = [tokenStream getToken];
+    STAssertNotNil(t, @"not nil");
+    STAssertTrue(t->kind == '0', @"kind %c", t->kind);
+    STAssertNil(t->value, @"value nil");
+
+    t = [tokenStream getToken];
+    STAssertNil(t, @"getToken end");
+}
+
 @end
